@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+
+    <context:annotation-config/>
+
+    <context:component-scan base-package="pl.basepoint.spring.web.controller"/>
+
+    <!-- configure 2 beans of type Cat -->
+
+    <bean id="tiger" class="pl.basepoint.spring.web.model.Cat">
+        <constructor-arg name="name" value="Tiger"/>
+    </bean>
+
+    <bean id="shadow" class="pl.basepoint.spring.web.model.Cat">
+        <constructor-arg name="name" value="Tiger"/>
+    </bean>
+
+    <bean id="catService" class="pl.basepoint.spring.web.service.CatService"/>
+    <bean id="catRepository" class="pl.basepoint.spring.web.repository.CatRepository"/>
+
+</beans>
