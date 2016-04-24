@@ -22,17 +22,6 @@ public class MvcInitializer extends AbstractAnnotationConfigDispatcherServletIni
         GroovyWebApplicationContext appContext = new GroovyWebApplicationContext();
         appContext.setConfigLocation("classpath:/applicationContext.groovy");
 
-//        GroovyWebApplicationContext appContext = new GroovyWebApplicationContext();
-//        appContext.setConfigLocation("classpath:/applicationContext.groovy");
-//
-//        GenericGroovyApplicationContext context = new GenericGroovyApplicationContext();
-//        context.load("file:/home/ski/applicationContext.groovy");
-//
-//
-//        GroovyWebApplicationContext appContext = new GroovyWebApplicationContext();
-////        appContext.
-//        String foo =  context.getBean("foo",String.class);
-
         ServletRegistration.Dynamic dispatcher = servletContext.addServlet("dispatcher", new DispatcherServlet(appContext));
         dispatcher.setLoadOnStartup(1);
         dispatcher.addMapping("/");
